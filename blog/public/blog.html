@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog posztok kezelése</title>
+</head>
+<style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.post {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background: #fafafa;
+  position: relative;
+}
+
+.post h3 {
+  margin: 0 0 5px 0;
+}
+
+.post small {
+  color: #777;
+}
+
+.post p {
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+.post .actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.post .actions button {
+  margin-left: 5px;
+  background-color: #e74c3c;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.post .actions button.edit-btn {
+  background-color: #27ae60;
+}
+
+.post .actions button:hover {
+  opacity: 0.8;
+}
+
+</style>
+<body>
+  <div class="container">
+    <h1>Blog posztok kezelése</h1>
+
+    <section id="create-post-section">
+      <h2>Új blog poszt létrehozása</h2>
+      <form id="post-form">
+        <label for="author">Szerző:</label>
+        <input type="text" id="author" required />
+
+        <label for="title">Cím:</label>
+        <input type="text" id="title" required />
+
+        <label for="category">Kategória:</label>
+        <input type="text" id="category" required />
+
+        <label for="content">Tartalom:</label>
+        <textarea id="content" rows="5" required></textarea>
+
+        <button type="submit">Létrehozás</button>
+      </form>
+    </section>
+
+    <section id="posts-section">
+      <h2>Blog posztok</h2>
+      <div id="posts"></div>
+    </section>
+  </div>
+
+  <script src="blog.js"></script>
+</body>
+</html>
